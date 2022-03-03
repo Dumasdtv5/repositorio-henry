@@ -1,0 +1,5 @@
+Variables: Es la forma de guardar algo para utilizarlo más adelante.
+Instrumentos de cuerda: Es una cadena texto entre comillas.
+Funciones:Son bloques de códigos  para que realicen una tarea asignada. Los argumentos son las instrucciones y en algunos casos si cumplen con condiciones que indicamos o no, le pedimos que retorne algo. En si las funciones siempre retorna algo.
+Declaración If: Son argumentos que SI cumplen o no con lo declarado deberá realizar o retornar algo.
+Valores Booleanos: Se utiliza si se cumplen o no lo indicado en las funciones, también mensaje que arroja el interprete cuando interactuamos. Verdadero o Falso.
