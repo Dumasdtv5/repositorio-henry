@@ -1,0 +1,23 @@
+For: Es un bucle determinado que hay que epecificar cuantas vuelta dará ejecución para que no sea infinita.
+Operadores Lógicos: Son imprescindibles para realizar aplicaciones  complejas.
+&&: Su resultado es True si los 2 operandos son true
+
+Variable1   Variable2   Variable1&&Variable2
+True         True        True
+True         false       False
+false        True        False
+False        False       False
+
+OR: Determina si una de las expresiones es True.
+
+Variable1   Variable2   Variable1&&Variable2
+True         True        True
+True         false       True
+false        True        True
+False        False       False
+
+Not: Se utilizá para obtener valor contrario al valor de la variable.
+
+  Variable   !Variable
+   True       False 
+   Falsea      True
