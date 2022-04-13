@@ -1,335 +1,190 @@
-
 // No cambies los nombres de las funciones.
 
-function devolverPrimerElemento(array) {
-  // Devuelve el primer elemento de un  array (pasado por parametro)
+function crearGato(nombre, edad) {
+  // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
+  // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
+  // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
+  // Devuelve el objeto
   // Tu código:
- return array [0] ;
-}
-
-
-function devolverUltimoElemento(array) {
-  // Devuelve el último elemento de un array
-  // Tu código:
-return array [array.length - 1];
-}
-
-
-function obtenerLargoDelArray(array) {
-  // Devuelve el largo de un array
-  // Tu código:
-  return array.length;
-}
-
-
-function incrementarPorUno(array) {
-  // "array" debe ser una matriz de enteros (int/integers)
-  // Aumenta cada entero por 1
-  // y devuelve el array
-  // Tu código:
-
-  var arraymas = []
-  for (var i = 0 ; i < array.length; i++) {
-    arraymas[i] = array[i] + 1
-  }
-  return arraymas
-  }
-   
-function agregarItemAlFinalDelArray(array, elemento) {
-  // Añade el "elemento" al final del array
-  // y devuelve el array
-  // Tu código:
-array[array.length] = elemento;
-  return array;
-  
-}
-
-
-function agregarItemAlComienzoDelArray(array, elemento) {
-  // Añade el "elemento" al comienzo del array
-  // y devuelve el array
-  // Pista: usa el método `.unshift`
-  // Tu código:
-array. unshift(elemento);
-
-return array; 
-
-}
-
-
-function dePalabrasAFrase(palabras) {
-  // "palabras" es un array de strings/cadenas
-  // Devuelve un string donde todas las palabras estén concatenadas
-  // con espacios entre cada palabra
-  // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
-  // Tu código:
-
-return palabras.join(" "); 
-
-}
-
-
-function arrayContiene(array, elemento) {
-  // Comprueba si el elemento existe dentro de "array"
-  // Devuelve "true" si está, o "false" si no está
-  // Tu código:
-  for(var i = 0; i < array.length; i++) {
-    if(array[i] === elemento) {
-      return true;
+  var  objeto = {
+       nombre : nombre,
+        edad :edad,
+        meow: function meow() {
+               return "Meow!";
+          }
     }
-  }
-  return false;
 
-
+      return objeto;
 }
 
 
-function agregarNumeros(numeros) {
-  // "numeros" debe ser un arreglo de enteros (int/integers)
-  // Suma todos los enteros y devuelve el valor
+function agregarPropiedad(objeto, property) {
+  // Agrega una propiedad al objeto (argumento "objeto") con el valor `null`
+  // Devuelve el objeto
+  // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-var suma  = 0;
-for (var i = 0; i < numeros.length; i++ ) {
-suma = suma + numeros[i];
+   objeto [property] = null;
+   return objeto;
 }
 
-return suma;
-}
-
-  function promedioResultadosTest(resultadosTest) {
-  // "resultadosTest" debe ser una matriz de enteros (int/integers)
-  // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
+function invocarMetodo(objeto, metodo) {
+  // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
+  // Invoca ese método
+  // Nada necesita ser devuelto ("returned")
   // Tu código:
- var enteros = 0;
- for(var i = 0 ; i < resultadosTest.length ; i++){
-
- enteros += resultadosTest[i] ;
-
- }
-
- return enteros / resultadosTest.length;
-
+     objeto [metodo]();
 }
 
-
-function numeroMasGrande(numeros) {
-  // "numeros" debe ser una matriz de enteros (int/integers)
-  // Devuelve el número más grande
+function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
+  // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
+  // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-var grande = 0;
-for (i = 0; i < numeros.length ; i++) {
-
-if ( numeros[i] > grande) {
-
-grande  = numeros[i];
+      var total = objetoMisterioso.numeroMisterioso * 5;
+      return total;
 }
-
-}
-return grande; 
-
-}
-
-
-function multiplicarArgumentos() {
-  // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
-  // Escribe tu código aquí:
-  var acumulador = 1 ;
- if(arguments.length === 0) { 
-  return 0;
-  }
-  else if (arguments.length === 1){
-return arguments[0]
-  }
-else {
-
-for ( var i = 0; i < arguments.length; i++){
-acumulador = acumulador * arguments[i]
-
-}
-}  
-  return acumulador;
-}
-
-
-function cuentoElementos(arreglo){
-  //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
-  //Escribe tu código aquí
-let contador = 0;
-  for (let i = 0; i < arreglo.length ; i++) {
-    if(arreglo[i] > 19){
-      contador++
-    }
-  }
-  return contador
-
-}
-
-
-
-function diaDeLaSemana(numeroDeDia) {
-  //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. 
-  //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
-  //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
-  //Escribe tu código aquí   
-if (numeroDeDia === 1 || numeroDeDia === 7) {
-
-return "Es fin de semana";
-}
-else if (numeroDeDia > 1 && numeroDeDia < 7) {
-
-
-  return "Es dia Laboral";
-}
-
-
-
-  
-} 
-
-
-function empiezaConNueve(n) {
-  //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
-  //inicia con 9 y false en otro caso.
-  //Escribe tu código aquí
-var string = n.toString();
-if (string[0] ==="9") {
-
-return true;
-}
-
-return false;
-  
-}
-
-
-function todosIguales(arreglo) {
-  //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
-  //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
-for (var i = 0; i < arreglo.length - 1; i++ ) {
-  if (arreglo[i] !== arreglo[i+1]) {
-return false;
-
-  }
-  return true;
-}
-  
-}
-
-function mesesDelAño(array) {
-  //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
-  // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
-  //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
+function eliminarPropiedad(objeto, unaPropiedad) {
+  // Elimina la propiedad de objeto cuyo nombre está pasado por el parametro unaPropiedad 
+  // tip: tenes que usar bracket notation
+  // Devuelve el objeto
   // Tu código:
-var nuevoArray = [];
-  for(let i= 0; i<array.length; i++) {
-    if(array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
-      nuevoArray.push(array[i]);
-    }
-  }
-  if(nuevoArray.length < 3) {
-    return "No se encontraron los meses pedidos";
-  }
-  else {
-      return nuevoArray;
-  }
-
-
-
+delete objeto[unaPropiedad];
+return objeto;
 }
 
-function mayorACien(array) {
-  //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
-  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+function nuevoUsuario(nombre, email, password) {
+  // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
+  // Devuelve el objeto
+  // Tu código:
+       var nuevoObjeto = {
+            
+            nombre : nombre,
+            email : email,
+            password : password,
+            }
+
+         return nuevoObjeto;
+}
+
+function tieneEmail(usuario) {
+  // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
+  // De lo contratio, devuelve "false"
   // Tu código:
 
-      var nuevoArray =[]
-      for (var  i = 0 ; i < array.length ; i++) {
-            if (array[i] > 100) {
-          
-               nuevoArray.push(array[i]);   
-             } 
-         }
-         return nuevoArray;
-}         
-
-
-
-
-function breakStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
-  //Guardar cada nuevo valor en un array. 
-  //Devolver el array
-  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
-  //devolver: "Se interrumpió la ejecución"
-  //Pista: usá el statement 'break
-  // Tu código:
-var arraynumerico = [];
-var suma = numero;
-for (var i = 0; i < 10; i++) {
-  suma = suma + 2;
-  if (suma === i) {
-       break;
-  }else {
-    arraynumerico.push(suma);
+  if (usuario.email) {
+       return true;
+    
   }
-
-    if(arraynumerico.length < 10){
-       return "Se interrumpió la ejecución";
-    }
-    else if(arraynumerico.length === 10){
-     return arraynumerico;
-    }
-}
-
+     else {
+         return false;
+     }
 }
 
 
-function continueStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
-  //Guardar cada nuevo valor en un array.    
-  //Devolver el array
-  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
-  //Pista: usá el statement 'continue'
+
+function tienePropiedad(objeto, propiedad) {
+  // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
+  // "propiedad" es un string
+  // De lo contrario, devuelve "false"
+  // Tu código:
+        if (objeto[propiedad]){
+             return true;
+        }
+    return false;
+
+}
+
+function verificarPassword(usuario, password) {
+  // Comprueba si la "password" enviada coincide con la propiedad "password" del objeto "usuario"
+  // Devuelve "true" si coinciden
+  // De lo contrario, devuelve "false"
+  // // Tu código:
+      if (password === usuario.password) {
+            return true;
+
+        }
+
+    return false;
+}
+
+function actualizarPassword(usuario, nuevaPassword) {
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Devuelve el objeto
+  // Tu código:
+      
+      usuario.password = nuevaPassword;
+       return usuario;   
+}
+
+function agregarAmigo(usuario, nuevoAmigo) {
+  // "usuario" tiene una propiedad llamada "amigos" que es un array
+  // Agrega "nuevoAmigo" al final de ese array
+  // Devuelve el objeto "usuario"
+  // // Tu código:
+    usuario.amigos.push(nuevoAmigo);
+    return usuario;
+}
+
+
+function pasarUsuarioAPremium(usuarios) {
+  // "usuarios" es un array de objetos "usuario"
+  // Cada objeto "usuario" tiene la propiedad "esPremium"
+  // Define cada propiedad "esPremium" de cada objeto como "true"
+  // Devuelve el array de usuarios
+  // Tu código:
+    for(var i = 0; i < usuarios.length ; i++){
+        usuarios[i].esPremium = true;
+       }
+       return usuarios;
+}
+
+function sumarLikesDeUsuario(usuario) {
+  // "usuario" tiene una propiedad llamada "posts" que es un array
+  // "posts" es un array de objetos "post"
+  // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
+  // Suma todos los likes de todos los objetos "post"
+  // Devuelve la suma
   // Tu código:
 
-  var arraynuevo = [];
-    var suma = numero;
-       for (var i = 0; i < 10; i++){
-           if (i === 5) 
-              continue;
-             else {
-                     suma = suma + 2;
-                     arraynuevo.push(suma);
-                  }
-    }
-     return arraynuevo;
+   var sumalikes = 0;
+   for (var i = 0; i < usuario.posts.length; i++ ) {
+        sumalikes = sumalikes + usuario.posts[i].likes;
+     }
+    return sumalikes;
 }
 
+
+function agregarMetodoCalculoDescuento(producto) {
+  // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
+  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // El método resta el descuento del precio y devuelve el precio con descuento
+  // Devuelve el objeto "producto" al final de la función
+  // Ejemplo:
+  // producto.precio -> 20
+  // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
+  // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
+  // Tu código:
+      producto.calcularPrecioDescuento  = function () {
+       return this.precio - (this.precio * this.porcentajeDeDescuento)
+      }
+          return producto;
+}
 
 // No modificar nada debajo de esta línea
 // --------------------------------
 
 module.exports = {
-  devolverPrimerElemento,
-  devolverUltimoElemento,
-  obtenerLargoDelArray,
-  incrementarPorUno,
-  agregarItemAlFinalDelArray,
-  agregarItemAlComienzoDelArray,
-  dePalabrasAFrase,
-  arrayContiene,
-  agregarNumeros,
-  promedioResultadosTest,
-  numeroMasGrande,
-  multiplicarArgumentos,
-  cuentoElementos,
-  diaDeLaSemana,
-  empiezaConNueve,
-  todosIguales,
-  mesesDelAño,
-  mayorACien,
-  breakStatement,
-  continueStatement
+  crearGato,
+  agregarPropiedad,
+  invocarMetodo,
+  multiplicarNumeroDesconocidoPorCinco,
+  eliminarPropiedad,
+  nuevoUsuario,
+  tieneEmail,
+  tienePropiedad,
+  verificarPassword,
+  actualizarPassword,
+  agregarAmigo,
+  pasarUsuarioAPremium,
+  sumarLikesDeUsuario,
+  agregarMetodoCalculoDescuento
 };
